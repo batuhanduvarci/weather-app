@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/weather_navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/weather_navigation"
+    app:startDestination="@id/fragmentWeatherApi">
 
+    <fragment android:id="@+id/fragmentWeatherApi"
+        android:name="com.example.weatherapp.ui.weatherapi.WeatherApiFragment"
+        tools:layout="@layout/fragment_weather_api">
+
+    </fragment>
 </navigation>

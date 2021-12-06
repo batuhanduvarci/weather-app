@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+
+    <string name="fragment_weather_api_edit_text_hint">API Key</string>
+    <string name="fragment_weather_api_text_input_layout_error_text">Please enter a valid api key</string>
+    <string name="fragment_weather_proceed_button_text">Enter</string>
 </resources>
