@@ -12,6 +12,7 @@ interface WeatherService {
     suspend fun getWeatherData(
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
-        @Query("appid") appId: String
+        @Query("appid") appId: String,
+        @Query("units") units: String? = ApplicationConstants.WEATHER_UNIT_DEFAULT_VALUE
     ) : WeatherResponseModel
 }
