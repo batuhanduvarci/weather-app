@@ -6,5 +6,5 @@ data class WeatherResponseModel(
     @SerializedName("current")
     val current: CurrentWeatherResponseModel? = null,
     @SerializedName("daily")
-    val daily: List<CurrentWeatherResponseModel> = listOf()
+    val daily: List<DailyWeatherItemResponseModel> = listOf()
 )

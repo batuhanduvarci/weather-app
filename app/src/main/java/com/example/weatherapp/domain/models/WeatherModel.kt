@@ -5,5 +5,5 @@ package com.example.weatherapp.domain.models
  */
 data class WeatherModel(
     val current: List<WeatherItemModel>? = listOf(),
-    val daily: List<List<WeatherItemModel>>? = listOf()
+    val daily: List<DailyWeatherItemModel>? = listOf()
 )
