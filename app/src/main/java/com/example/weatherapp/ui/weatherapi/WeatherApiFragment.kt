@@ -3,6 +3,7 @@ package com.example.weatherapp.ui.weatherapi
 import android.view.View
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.weatherapp.R
 import com.example.weatherapp.databinding.FragmentWeatherApiBinding
 import com.example.weatherapp.ui.base.BaseFragment
@@ -23,24 +24,29 @@ class WeatherApiFragment : BaseFragment<FragmentWeatherApiBinding, WeatherApiVie
                     viewModel.validateApiKey(text.toString())
                 }
             }
-            apiTextInputLayout.setOnClickListener{
-                //TODO
+            proceedMaterialButton.setOnClickListener{
+                viewModel.validation.value?.let {
+                    if (it){
+                        findNavController().navigate(WeatherApiFragmentDirections.toFragmentWeatherDetail())
+                    }
+                }
             }
         }
     }
 
     override fun initObservers() {
-        viewModel.validation.observe(viewLifecycleOwner, {
-            with(binding!!){
-                if (it){
+        viewModel.validation.observe(viewLifecycleOwner) {
+            with(binding!!) {
+                if (it) {
                     apiTextInputLayout.isErrorEnabled = false
                     apiTextInputLayout.boxStrokeColor = resources.getColor(R.color.green)
-                }else{
-                    apiTextInputLayout.error = getString(R.string.fragment_weather_api_text_input_layout_error_text)
+                } else {
+                    apiTextInputLayout.error =
+                        getString(R.string.fragment_weather_api_text_input_layout_error_text)
                 }
 
             }
-        })
+        }
     }
 
     override fun startCoroutine() = Unit
