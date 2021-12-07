@@ -1,8 +1,15 @@
 package com.example.weatherapp.domain.util
 
-interface DomainMapper<T, DomainModel> {
+import com.example.weatherapp.domain.models.WeatherItemModel
+import com.example.weatherapp.domain.models.WeatherModel
+import com.example.weatherapp.network.models.WeatherItemResponseModel
+import com.example.weatherapp.network.models.WeatherResponseModel
 
-    fun mapToDomainModel(response: T): DomainModel
+interface DomainMapper {
 
-    fun fromEntityList(initial: List<T>): List<DomainModel>
+    fun mapToDomainModel(response: WeatherResponseModel): WeatherModel
+
+    fun mapToDomainList(initial: List<WeatherItemResponseModel>?): List<WeatherItemModel>
+
+    fun mapToDomainItem(initialModel: WeatherItemResponseModel): WeatherItemModel
 }

@@ -1,8 +1,8 @@
 package com.example.weatherapp.repository
 
-import com.example.weatherapp.domain.models.WeatherItemModel
+import com.example.weatherapp.domain.models.WeatherModel
 
 interface WeatherRepository {
 
-    suspend fun getWeatherData(latitude: Double, longitude: Double, apiId: String) : List<WeatherItemModel>
+    suspend fun getWeatherData(latitude: Double, longitude: Double, apiId: String) : WeatherModel
 }

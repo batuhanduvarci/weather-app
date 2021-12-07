@@ -2,6 +2,7 @@ package com.example.weatherapp.network
 
 import com.example.weatherapp.constants.ApplicationConstants
 import com.example.weatherapp.network.models.CurrentWeatherResponseModel
+import com.example.weatherapp.network.models.WeatherResponseModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -12,5 +13,5 @@ interface WeatherService {
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
         @Query("appid") appId: String
-    ) : CurrentWeatherResponseModel
+    ) : WeatherResponseModel
 }
