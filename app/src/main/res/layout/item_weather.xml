@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="@dimen/dimen_4"
+    android:paddingHorizontal="@dimen/dimen_4"
+    android:paddingVertical="@dimen/dimen_8">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dayTextView"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="wrap_content"
+        tools:text="Monday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/weatherImageView"
+        style="@style/TextStyle"/>
+
+    <ImageView
+        android:id="@+id/weatherImageView"
+        android:layout_width="@dimen/dimen_32"
+        android:layout_height="@dimen/dimen_32"
+        tools:src="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/dayTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/degreeHighestTextView"
+        android:layout_marginHorizontal="@dimen/dimen_16"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/degreeHighestTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="6"
+        app:layout_constraintStart_toEndOf="@+id/weatherImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/degreeLowestTextView"
+        android:layout_marginHorizontal="@dimen/dimen_16"
+        style="@style/TextStyle"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/degreeLowestTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="1"
+        app:layout_constraintStart_toEndOf="@+id/degreeHighestTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/dimen_16"
+        style="@style/TextStyle"
+        android:textColor="@color/light_gray"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

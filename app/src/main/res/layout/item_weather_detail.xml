@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/locationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="İzmir, TR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/weatherImageView"
+        style="@style/TextStyle"/>
+
+    <ImageView
+        android:id="@+id/weatherImageView"
+        android:layout_width="@dimen/dimen_32"
+        android:layout_height="@dimen/dimen_32"
+        tools:src="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/locationTextView"
+        app:layout_constraintEnd_toEndOf="@+id/locationTextView"
+        app:layout_constraintTop_toBottomOf="@+id/locationTextView"
+        app:layout_constraintBottom_toTopOf="@+id/degreeTextView"
+        android:layout_marginVertical="@dimen/dimen_16"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/degreeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="5"
+        android:textSize="@dimen/text_size_20"
+        app:layout_constraintStart_toStartOf="@+id/weatherImageView"
+        app:layout_constraintEnd_toEndOf="@+id/weatherImageView"
+        app:layout_constraintTop_toBottomOf="@+id/weatherImageView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/TextStyle"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

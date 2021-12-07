@@ -9,5 +9,13 @@
         android:name="com.example.weatherapp.ui.weatherapi.WeatherApiFragment"
         tools:layout="@layout/fragment_weather_api">
 
+        <action android:id="@+id/toFragmentWeatherDetail"
+            app:destination="@id/fragmentWeatherDetail"/>
+    </fragment>
+
+    <fragment android:id="@+id/fragmentWeatherDetail"
+        android:name="com.example.weatherapp.ui.weatherdetail.WeatherDetailFragment"
+        tools:layout="@layout/fragment_weather_detail">
+
     </fragment>
 </navigation>
