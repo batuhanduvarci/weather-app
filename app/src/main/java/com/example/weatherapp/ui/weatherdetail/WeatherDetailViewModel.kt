@@ -4,6 +4,7 @@ import android.content.res.Resources
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.weatherapp.R
 import com.example.weatherapp.domain.models.WeatherItemModel
 import com.example.weatherapp.network.handler.NetworkResult
 import com.example.weatherapp.repository.WeatherRepository
@@ -12,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class WeatherDetailViewModel @Inject constructor(
-    private val weatherRepository: WeatherRepository
+    private val weatherRepository: WeatherRepository,
+    private val resources: Resources
 ) : ViewModel() {
 
     private val _weatherData =
@@ -23,7 +25,7 @@ class WeatherDetailViewModel @Inject constructor(
         try {
             val response = weatherRepository.getWeatherData(latitude, longitude, apiId)
             if (response.isEmpty()) {
-                _weatherData.postValue(NetworkResult.Error("Network Error"))
+                _weatherData.postValue(NetworkResult.Error(resources.getString(R.string.fragment_weather_detail_network_error_text)))
             } else {
                 _weatherData.postValue(NetworkResult.Success(response))
             }
