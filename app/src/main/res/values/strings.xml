@@ -6,4 +6,6 @@
     <string name="fragment_weather_proceed_button_text">Enter</string>
 
     <string name="fragment_weather_detail_network_error_text">Network Error</string>
+    <string name="fragment_weather_detail_location_error_text">Unable to get Location Data</string>
+    <string name="fragment_weather_detail_degree_text">%d°</string>
 </resources>
