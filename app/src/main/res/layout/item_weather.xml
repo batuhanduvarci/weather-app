@@ -16,15 +16,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/weatherImageView"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         style="@style/TextStyle"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="vertical" />
 
     <ImageView
         android:id="@+id/weatherImageView"
         android:layout_width="@dimen/dimen_32"
         android:layout_height="@dimen/dimen_32"
         tools:src="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/dayTextView"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/degreeHighestTextView"
@@ -32,9 +39,10 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/degreeHighestTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dimen_0"
         android:layout_height="wrap_content"
         tools:text="6"
+        android:gravity="center"
         app:layout_constraintStart_toEndOf="@+id/weatherImageView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,9 +52,10 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/degreeLowestTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dimen_0"
         android:layout_height="wrap_content"
         tools:text="1"
+        android:gravity="center"
         app:layout_constraintStart_toEndOf="@+id/degreeHighestTextView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
