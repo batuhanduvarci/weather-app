@@ -48,6 +48,4 @@ class WeatherApiFragment : BaseFragment<FragmentWeatherApiBinding, WeatherApiVie
             }
         }
     }
-
-    override fun startCoroutine() = Unit
 }

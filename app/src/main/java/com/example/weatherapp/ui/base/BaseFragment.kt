@@ -26,7 +26,6 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(layoutId: Int) : F
 
         initUserInterface()
         initObservers()
-        startCoroutine()
     }
 
     override fun onAttach(context: Context) {
@@ -39,8 +38,6 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(layoutId: Int) : F
     abstract fun initUserInterface()
 
     abstract fun initObservers()
-
-    abstract fun startCoroutine()
 
     override fun onDestroyView() {
         super.onDestroyView()
