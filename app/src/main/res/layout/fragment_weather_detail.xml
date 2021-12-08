@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <include layout="@layout/item_weather_detail"
-        android:id="@+id/item_weather_detail"
+        android:id="@+id/itemWeatherDetail"
         android:layout_width="@dimen/dimen_0"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,10 +23,10 @@
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_weather_detail"
+        app:layout_constraintTop_toBottomOf="@+id/itemWeatherDetail"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_weather"
-        tools:itemCount="7e"/>
+        tools:itemCount="7"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
