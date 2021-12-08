@@ -30,7 +30,7 @@ class WeatherDetailFragment : BaseFragment<FragmentWeatherDetailBinding, Weather
 
     override fun initUserInterface() {
         with(binding!!){
-            adapter = WeatherListAdapter(resources)
+            adapter = WeatherListAdapter()
             weatherRecyclerView.adapter = adapter
         }
     }
