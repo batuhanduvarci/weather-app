@@ -27,7 +27,7 @@ class WeatherApiFragment : BaseFragment<FragmentWeatherApiBinding, WeatherApiVie
             proceedMaterialButton.setOnClickListener{
                 viewModel.validation.value?.let {
                     if (it){
-                        findNavController().navigate(WeatherApiFragmentDirections.toFragmentWeatherDetail())
+                        findNavController().navigate(WeatherApiFragmentDirections.toFragmentWeatherDetail(apiTextInputEditText.text.toString()))
                     }
                 }
             }

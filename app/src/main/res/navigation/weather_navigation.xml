@@ -16,6 +16,8 @@
     <fragment android:id="@+id/fragmentWeatherDetail"
         android:name="com.example.weatherapp.ui.weatherdetail.WeatherDetailFragment"
         tools:layout="@layout/fragment_weather_detail">
-
+        <argument android:name="appId"
+            app:nullable="false"
+            app:argType="string" />
     </fragment>
 </navigation>
