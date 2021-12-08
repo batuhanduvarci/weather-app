@@ -1,27 +1,31 @@
 package com.example.weatherapp.network.mapper
 
-import com.example.weatherapp.domain.models.DailyWeatherItemModel
-import com.example.weatherapp.domain.models.TemperatureModel
-import com.example.weatherapp.domain.models.WeatherItemModel
-import com.example.weatherapp.domain.models.WeatherModel
+import com.example.weatherapp.domain.models.*
 import com.example.weatherapp.domain.util.DomainMapper
 import com.example.weatherapp.network.mapper.util.DateUtils
 import com.example.weatherapp.network.mapper.util.UrlUtils
-import com.example.weatherapp.network.models.CurrentWeatherItemResponseModel
-import com.example.weatherapp.network.models.DailyWeatherItemResponseModel
-import com.example.weatherapp.network.models.TemperatureResponseModel
-import com.example.weatherapp.network.models.WeatherResponseModel
+import com.example.weatherapp.network.models.*
 
 class WeatherResponseMapper : DomainMapper {
 
     override fun mapToDomainModel(response: WeatherResponseModel): WeatherModel {
         return WeatherModel(
-            current = mapCurrentList(response.current?.currentWeather),
+            current = mapCurrentWeather(response.current),
             daily = mapDailyList(response.daily)
         )
     }
 
-    override fun mapCurrentList(initial: List<CurrentWeatherItemResponseModel>?): List<WeatherItemModel> {
+    override fun mapCurrentWeather(initial: CurrentWeatherResponseModel?): CurrentWeatherModel? {
+        initial?.let {
+            return CurrentWeatherModel(
+                it.temp?.toInt(),
+                mapWeatherList(it.currentWeather)
+            )
+        }
+        return null
+    }
+
+    override fun mapWeatherList(initial: List<CurrentWeatherItemResponseModel>?): List<WeatherItemModel> {
         initial?.let { list ->
             return list.map { mapToWeatherItem(it) }
         }
@@ -45,15 +49,15 @@ class WeatherResponseMapper : DomainMapper {
         return DailyWeatherItemModel(
             DateUtils.convertToDate(initialModel.date),
             mapToTemperature(initialModel.temp),
-            mapCurrentList(initialModel.dailyWeather)
+            mapWeatherList(initialModel.dailyWeather)
         )
     }
 
     override fun mapToTemperature(initialModel: TemperatureResponseModel?): TemperatureModel? {
         initialModel?.let {
             return TemperatureModel(
-                max = it.max,
-                min = it.min
+                max = it.max?.toInt(),
+                min = it.min?.toInt()
             )
         }
         return null
