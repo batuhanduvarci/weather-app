@@ -9,4 +9,6 @@ object ApplicationConstants {
     const val BASE_URL = "https://api.openweathermap.org/"
     const val WEATHER_ENDPOINT = "data/2.5/onecall"
     const val WEATHER_UNIT_DEFAULT_VALUE = "metric"
+
+    const val LOCATION_PERMISSION_ID = 1001
 }
